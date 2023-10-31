@@ -1,7 +1,7 @@
 
-document.getElementById("signup-btn").addEventListener("click", function() {
+document.getElementById("signup-btnHead").addEventListener("click", function() {
 
-    window.location.href = "../signup.html";
+    window.location.href = "../signup/signup.html";
 });
 
 
@@ -23,13 +23,21 @@ const signupButton = document.querySelector(".signup-btn");
 
 signupButton.addEventListener("click", function() {
     const loginInput = document.getElementById("login");
+    const loginInputLog = document.getElementById("loginLog");
     const nameInput = document.getElementById("name");
     const passwordInput = document.getElementById("password");
+    const passwordInputLog = document.getElementById("passwordLog");
 
     if (!loginInput.value) {
         loginInput.style.borderBottomColor = "red";
     } else {
         loginInput.style.borderBottomColor = "";
+    }
+
+    if (!loginInputLog.value) {
+        loginInputLog.style.borderBottomColor = "red";
+    } else {
+        loginInputLog.style.borderBottomColor = "";
     }
 
     if (!nameInput.value) {
@@ -44,7 +52,13 @@ signupButton.addEventListener("click", function() {
         passwordInput.style.borderBottomColor = "";
     }
 
-    if (loginInput.value && nameInput.value && passwordInput.value) {
+    if (!passwordInputLog.value) {
+        passwordInputLog.style.borderBottomColor = "red";
+    } else {
+        passwordInputLog.style.borderBottomColor = "";
+    }
+
+    if (loginInput.value && nameInput.value && passwordInput.value && passwordInputLog.value && loginInputLog.value) {
         openPopUp.click();
     }
 });
